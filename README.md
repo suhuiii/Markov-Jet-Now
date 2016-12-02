@@ -1,4 +1,5 @@
-# Markov-Jet-Now: *A Markov chain generator for TV scripts and screenplays*
+# Markov-Jet-Now: 
+##*A Markov chain generator for TV scripts and screenplays*
 This is a Markov chain generator written in Python that uses TV scripts and screenplays as its corpus. A Markov model can thus be generated for each character.
 
 ##Background
@@ -28,9 +29,10 @@ Scripts should be put in a folder named *transcripts* in the project root direct
 
 ## Usage
 This project consists of two modules that are independent of each other:
+
 1. script_reader - reads scripts from a folder and generates a dictionary of key value pairs where
-    - keys are the the actors in the transcripts, and
-    - values are all the lines the actor has said in the scripts
+   *keys are the the actors in the transcripts, and
+   *values are all the lines the actor has said in the scripts
 2. Markov chain generator: given a corpus, generate a Markov model for the corpus
 
 This allows the user to swap out the markov module for some other text generator of their choice.
@@ -41,35 +43,46 @@ Import the packages into your python code
 
 ### To use the script reader
 **1. Creating a script reader object**
+
     If your scripts are in the default folder *transcripts*
         `reader = script_reader.Script_Reader() `
     Otherwise pass the folder path as a string 
         `reader = script_reader.Script_Reader('folder_path') `
     The reader will automatically read all the files in the folder.
+
 **2. List all actors**
+
     To obtain the full list of actors that the reader has found
     `reader.get_list_of_actors()`
+
 **3. Obtaining an actor's full script**
+
     To get all the lines that an actor has said:
     `reader.get_scripts_by_actor('<name>')`
 
 ### To use the Markov Chain Generator
 **1. Create a Markov Chain object**
+
     Simply pass the corpus as a parameter to create a Markov Model with a state size of 2
-    `model = markov.Text(corpus)`
-    You can adjust the state size by passing an additional parameter
-    `model = markov.Text(corpus, 3)`
+    `model = markov.Text(corpus)`  
+    You can adjust the state size by passing an additional parameter  
+    `model = markov.Text(corpus, 3)`  
+
 **2. Generate a sentence**
-    A random sentence can be generated simply be executing
-    `model.generate_sentence()'
+
+    A random sentence can be generated simply be executing  
+    `model.generate_sentence()'  
     The model will only output a sentence if the exact sequence of words is not present in the corpus. The model will try up to 10x before giving up and outputting an empty string.
 
 *Note that this particular Markov Chain generator is not a true probabilistic Markov Generator. Due to the small corpus size of the scripts I was working with, I have opted to choose the next state by:*
+
 1. *generating up to 5 next-states based on their probability given the current state*
+
 2. *then randomly choose one of the 5 choices as the next-state*
 
 *This provides more variance in the random sentences generated.*
 
 ### Combined Use of Both Modules
+
 A demonstration of the combined use of both modules can be found in demo.py
 
