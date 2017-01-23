@@ -2,6 +2,8 @@
 ##*A Markov chain generator for TV scripts and screenplays*
 This is a Markov chain generator written in Python that uses TV scripts and screenplays as its corpus. A Markov model can thus be generated for each character.
 
+***Update Dec 2016:** By using this code in combination with Flask and some SQLite, [Markov-ing Cabin Pressure](http://mjnair.pythonanywhere.com/) is now live!*
+
 ##Background
 [Cabin Pressure](http://www.bbc.co.uk/programmes/b00lmcxj) is one of my favorite radio shows of all time, and I thought it would be cool to generate Markov-Chains of each character on the show while learning python and picking up web development.
 
