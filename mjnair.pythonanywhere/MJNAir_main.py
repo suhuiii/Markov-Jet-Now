@@ -13,6 +13,8 @@ app.config.from_object(__name__)
 app.config.update(dict(
 	DATABASE = os.path.join(app.root_path, 'MJN.db'),
 	SECRET_KEY = 'dev_key',
+	# USERNAME = 'admin',
+	# PASSWORD = '',
 	SERVER_NAME = '127.0.0.1:5000'))
 
 def connect_db():
