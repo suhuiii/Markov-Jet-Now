@@ -1,0 +1,269 @@
+html,
+body {
+  background-color: #85b9dd;
+  width: 100%;
+  height: 100%;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+blockquote {
+  border: none
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  font-family: serif;
+/*  quotes: "\201C""\201D""\2018""\2019";*/
+}
+blockquote:before{
+  content: '\201C';
+  margin-right: 0.25em;
+}
+blockquote:after{
+  content: '\201D';
+  margin-left: 0.25em;
+}
+blockquote:before, blockquote:after {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+  font-family: sans-serif;
+}
+
+#profile {
+  max-height: 50px !important;
+  display: inline-block;
+  vertical-align: center;
+}
+
+.jumbotron{
+  z-index: 4;
+  position: relative;
+  background-color: rgba(236,238,239, 0.95)
+}
+
+img.rounded-circle{
+  height: 75px;
+  max-height: 75px;
+  width: 75px;
+  object-fit: cover;
+  border: 3px solid #eeeeee;
+}
+
+.display{
+  width: 60%;
+  min-width: 600px;
+  padding: 10px 30px;
+  border: 10px solid #ccc;
+  background-color: #222;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 4px #000 inset;
+}
+
+.text{
+  height: 20%;
+}
+
+.activity {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: #250000;
+  position: relative;
+  top: 33px;
+  left: -10px;
+}
+
+.activity.active {
+  background-color: #f00;
+
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transform: translateZ(0);
+  z-index: 0;
+}
+
+.cloud {
+  position: absolute;
+  top: 70%;
+  width: 300px;
+  right: 0;
+  opacity: 1;
+  z-index: -5
+}
+
+.cloud.smaller {
+  margin-right: 400px;
+  width: 100px;
+  margin-top: 50px;
+}
+
+.cloud.small {
+  margin-right: 200px;
+  width: 150px;
+}
+
+.cloud.distant {
+  z-index: -4;
+}
+
+.cloud.front{
+  z-index: -9;
+}
+.cloud.big {
+  width: 500px;
+  margin-top: 50px;
+  margin-right: 150px;
+}
+
+.cloud {
+  -webkit-animation-name: cloud-movement;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-direction: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 8s;
+
+  -moz-animation-name: cloud-movement;
+  -moz-animation-timing-function: linear;
+  -moz-animation-direction: forwards;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 8s;
+
+  animation-name: cloud-movement;
+  animation-timing-function: linear;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+}
+
+.slow {
+  -webkit-animation-duration: 11s;
+  -moz-animation-duration: 11s;
+  animation-duration: 11s;
+}
+
+.slower {
+  -webkit-animation-duration: 13s;
+  -moz-animation-duration: 13s;
+  animation-duration: 13s;
+}
+.slowest {
+  -webkit-animation-duration: 17s;
+  -moz-animation-duration: 17s;
+  animation-duration: 17s;
+}
+
+@-webkit-keyframes cloud-movement {
+  0% {
+    opacity: 0.1;
+    -webkit-transform: translateX(300px);
+    -moz-transform: translateX(300px);
+    transform: translateX(300px);
+  }
+  10% {
+
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-1000px);
+    -moz-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+  }
+}
+
+.plane-container {
+  position: absolute;
+  bottom: 5%;
+  width: 200px;
+  left: 20%;
+  margin: 0px auto;
+  z-index: 5;
+}
+
+.plane {
+  width: 100%;
+  height: 120px;
+}
+
+.plane-container {
+  -webkit-animation: paper-plane-scoping 5s alternate infinite;
+  -moz-animation: paper-plane-scoping 5s alternate infinite;
+  animation: paper-plane-scoping 5s alternate infinite;
+
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes paper-plane-scoping {
+  0% {
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    transform: translateY(50px);
+  }
+}
+
+.plane {
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+
+  -webkit-animation: plane-soaring 10s forwards infinite;
+  -moz-animation: plane-soaring 10s forwards infinite;
+  animation: plane-soaring 10s forwards infinite;
+}
+@-webkit-keyframes plane-soaring {
+  0% {s
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  40% {
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  60% {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  70% {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
